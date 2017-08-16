@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bz7v2moviereviews.MovieReviewsController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefWidth="1000.0">
+         <children>
+            <TextField fx:id="searchTextField" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="5.0" />
+            <Button layoutX="300.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" AnchorPane.rightAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <ListView fx:id="movieListView" prefHeight="120.0" prefWidth="200.0" />
+      <FlowPane fx:id="movieFlowPane" prefHeight="350.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="movieImg" fitHeight="216.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+               <FlowPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </FlowPane.margin></ImageView>
+            <VBox>
+               <children>
+                  <TextFlow fx:id="movieInfo" prefHeight="85.0" prefWidth="562.0" />
+                  <Button alignment="BASELINE_RIGHT" mnemonicParsing="false" text="Read Full Review" onAction="#handleWeb"/>
+               </children>
+               <FlowPane.margin>
+                  <Insets left="30.0" top="20.0" />
+               </FlowPane.margin>
+            </VBox>
+         </children></FlowPane>
+      <TextArea fx:id="movieTextArea" prefHeight="100.0" prefWidth="200.0" />
+   </children>
+</VBox>
